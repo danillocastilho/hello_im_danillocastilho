@@ -1,0 +1,28 @@
+### Node modules
+##########################################
+node_modules
+
+
+#### Sublime project
+##########################################
+*.sublime-project
+*.sublime-workspace
+
+
+### Composer
+##########################################
+
+composer.lock
+composer.phar
+vendor/
+
+
+### Project files and paths
+##########################################
+
+site/php/cache
+config/database.php
+deploy/
+site/
+dev/
+gulp.config.json

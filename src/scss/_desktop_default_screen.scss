@@ -1,0 +1,41 @@
+.app {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	text-rendering: optimizeLegibility;
+
+	section.welcome {
+		p {
+			position: absolute;
+			left: 5%;
+			top: 50%;
+			margin-top: -50px;
+			width: auto;
+			height: auto;
+			letter-spacing: -11px;
+
+			font-family: "Gotham Bold";
+			font-size: 100px;
+			color: #fff;
+			line-height: 100px;
+
+			span {
+				float: left;
+				width: 100%;
+				height: auto;
+
+				&.highlight{
+					width: 100%;
+					float: left;
+					font-size: 12px;
+					line-height: 0px;
+					letter-spacing: 0px;
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+}

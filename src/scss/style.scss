@@ -1,0 +1,41 @@
+/*=================================
+=            VARIABLES            =
+=================================*/
+  // $gol-orange : #f05323;
+
+/*===============================
+=            MIXIN's            =
+===============================*/
+
+/*====================================================
+=            RESET, DEFAULT's and HELPERS            =
+====================================================*/
+@import "normalize";
+@import "common";
+@import "fonts";
+
+
+/*================================
+=            IMPORT's            =
+================================*/
+
+@import "desktop_large_screen";
+
+@media only screen and (max-width:1500px) {
+	@import "desktop_default_screen";
+}
+@media only screen and (max-device-width:586px) and (orientation: portrait) {
+	@import "mobile_portrait";
+}
+@media screen and (device-aspect-ratio: 2/3) {
+	@import "mobile_small_portrait";
+}
+@media only screen and (max-device-width:736px) and (orientation: landscape) {
+	@import "mobile_landscape";
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	@import "tablet_portrait";
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+	@import "tablet_landscape";
+}
