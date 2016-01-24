@@ -41,7 +41,7 @@ function ScrollWhell ( xMinAndMaxScroll, yMinAndMaxScroll, callback ) {
   this.wheelEvent = isEventSupported('mousewheel') ? 'mousewheel' : 'wheel';
   this.rulers = {x: xMinAndMaxScroll, y: yMinAndMaxScroll };
   this.increment = (isMac()) ? 0.1 : 1;
-  this.position = {x: 0, y: 0};
+  this.position = {x: xMinAndMaxScroll.min, y: yMinAndMaxScroll.min};
   this.enable = true;
   this.animated_position = {x: 0, y: 0};
 
