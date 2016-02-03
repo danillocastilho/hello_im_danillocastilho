@@ -1,6 +1,5 @@
 canvas {
 	z-index: 0;
-	opacity: 0.2;
 }
 
 .app {
@@ -42,6 +41,7 @@ canvas {
 				width: 100%;
 				height: auto;
 				display: block;
+				text-shadow: 2px 2px #000000;
 
 				&.text-highlight{
 					width: 100%;
@@ -53,6 +53,7 @@ canvas {
 					font-family: "Gotham Medium";
 					color: #666666;
 					margin-top: 10px;
+					text-shadow: none;
 
 					a {
 						text-decoration: none;
@@ -73,6 +74,7 @@ canvas {
 	}
 
 	section.jobs, section.contact {
+		display: none;
 		div {
 			position: absolute;
 			top: 50%;

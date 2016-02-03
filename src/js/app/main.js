@@ -26,16 +26,6 @@ function setTimelineProgress ( currentTime ) {
 
 var state = 'home';
 
-function openJob () {
-	TweenMax.to(DisplayList.section_welcome.container, 1, {css: {y: '-40%', x: -50}, ease: Strong.easeOut });
-	TweenMax.to(DisplayList.section_jobs.container, 1, {css: {y: '-30%', x: 100}, ease: Strong.easeOut });
-}
-
-function closeJob () {
-	TweenMax.to(DisplayList.section_welcome.container, 1, {css: {y: '0%', x: 0}, ease: Strong.easeOut });
-	TweenMax.to(DisplayList.section_jobs.container, 1, {css: {y: '0%', x: 0}, ease: Strong.easeOut });
-}
-
 function job_CLICK ( event ) {
 	if( state == 'home' ){
 		state = 'job';
@@ -47,7 +37,6 @@ function job_CLICK ( event ) {
 	
 }
 
-
 function init (){
 	var axisScrollX = {min: 0, max: 0};
 	var axisScrollY = {min: 0, max: 100};
@@ -57,7 +46,6 @@ function init (){
 
 	background = new BackgroundView();
 	background.init();
-	background.createParticles();
 
 	new DisplayObject('app', $('.app'));
 	new DisplayObject('section_welcome', $('section.welcome'));
@@ -71,9 +59,8 @@ function init (){
 
 	new DisplayObject('background', $('canvas'));
 
-	timeline.add( TweenMax.to( DisplayList.background.container, 15, { css: {opacity: 0.4}, ease: Cubic.easeIn } ), 0 );
-	timeline.add( TweenMax.to( DisplayList.background.container, 3, { css: {opacity: 0.2}, ease: Cubic.easeIn } ), 18 );
-	timeline.add( TweenMax.to( DisplayList.background.container, 3, { css: {opacity: 0.4}, ease: Cubic.easeIn } ), 25 );
+	timeline.add( TweenMax.to( background.root.position, 25, { y: 1500, ease: Cubic.easeInOut } ), 0 );
+	timeline.add( TweenMax.to( background.light, 25, { intensity: 0, ease: Cubic.easeInOut } ), 0 );
 
 	for ( var i = 1; i <= DisplayList.section_welcome_paragraphs.container.length; i++ ) {
 		var text = new DisplayObject('text_' + i, $('section.welcome p:nth-child('+i+')'), DisplayList.section_welcome);
@@ -81,30 +68,22 @@ function init (){
 		var line = new DisplayObject('text_highlight' + i, $('section.welcome p:nth-child('+i+') .horizontal-line'), DisplayList.section_welcome);
 
 		if( i != 1 ){
-			timeline.add( TweenMax.fromTo( text.container, 1, { css: { x: 10, scale: 0.95, opacity: 0.02}}, { css: {x: 0, scale: 1, opacity: 1}, ease: Cubic.easeInOut } ), i );
+			timeline.add( TweenMax.fromTo( text.container, 1, { css: { x: 10, scale: 0.95, opacity: 0}}, { css: {x: 0, scale: 1, opacity: 1}, ease: Cubic.easeInOut } ), i );
 		}
 		if(i < DisplayList.section_welcome_paragraphs.container.length){
-			timeline.add( TweenMax.to( text.container, 1, { css: {x: 10, scale: 1, opacity: 0.02}, ease: Cubic.easeInOut } ), i + 1 );	
-			timeline.add( TweenMax.to( highlight.container, 1, { css: {y: 15, opacity: 0.02}, ease: Cubic.easeIn } ), i + 0.8 );
+			timeline.add( TweenMax.to( text.container, 1, { css: {x: 10, scale: 1, opacity: 0}, ease: Cubic.easeInOut } ), i + 1 );	
+			timeline.add( TweenMax.to( highlight.container, 1, { css: {y: 15, opacity: 0}, ease: Cubic.easeIn } ), i + 0.8 );
 			timeline.add( TweenMax.to( line.container, 1, { css: {width: 9}, ease: Cubic.easeIn } ), i + 0.6 );
 		}
 	}
 
+	/*
 	for ( var i = 1; i <= DisplayList.section_jobs_thumbs.container.length; i++ ) {
 		var thumb = new DisplayObject('thumb_' + i, $('section.jobs div:nth-child('+i+')'), DisplayList.section_welcome);
 		timeline.add( TweenMax.fromTo( thumb.container, 1, { css: { x: 10, opacity: 0}}, { css: {x: 0, opacity: 1}, ease: Cubic.easeInOut } ), (i) + 19 );
 		timeline.add( TweenMax.to( thumb.container, 1, { css: {x: -10, scale: 1, opacity: 0.02}, ease: Cubic.easeInOut } ), (i + 1) + 19 );
 	}
-
-	$(DisplayList.app.container).bind(MOUSE_EVENT.CLICK, job_CLICK);
-
-	// for ( var i = 1; i <= DisplayList.section_contact_thumbs.container.length; i++ ) {
-	// 	var thumb = new DisplayObject('thumb_' + i, $('section.contact div:nth-child('+i+')'), DisplayList.section_welcome);
-	// 	timeline.add( TweenMax.fromTo( thumb.container, 1, { css: { x: 10, opacity: 0}}, { css: {x: 0, opacity: 1}, ease: Cubic.easeInOut } ), (i) + 28 );
-	// 	timeline.add( TweenMax.to( thumb.container, 1, { css: {x: -10, scale: 1, opacity: 0.02}, ease: Cubic.easeInOut } ), (i + 1) + 28 );
-	// }
-
-	// timeline.progress(0.74);
+	*/
 
 	scrollWhell = new ScrollWhell( axisScrollX, axisScrollY, scrollWhell_callback );
 	scrollGesture = new ScrollGesture( axisScrollX, axisScrollY, scrollGesture_callback );
