@@ -1,0 +1,24 @@
+.app {
+
+	section.welcome {
+		p {
+			margin-top: -15px;
+			letter-spacing: -2px;
+			font-size: 30px;
+			line-height: 30px;
+
+			span {
+				&.text-highlight{
+					font-size: 10px;
+					line-height: 15px;
+					margin-left: 0px;
+				}
+
+				&.horizontal-line {
+					margin-top: 20px;
+					margin-left: 0px;
+				}
+			}
+		}
+	}
+}

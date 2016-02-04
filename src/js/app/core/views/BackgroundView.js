@@ -1,36 +1,18 @@
-function BarGeometry () {
-	var container = new THREE.Group();
-
-	var geometry = new THREE.BoxGeometry( 130, 1500, 100 );
-	var material = new THREE.MeshPhongMaterial({
-		color: 0x000000,
-		emissive: 0x000000,
-		side: THREE.DoubleSide,
-		shading: THREE.FlatShading
-	});
-
-	var cube = new THREE.Mesh( geometry, material );
-	cube.position.y = -(1500 / 2);
-	container.add( cube );
-
-	return container;
-}
-
 function BackgroundView () {
 	this.scene;
 	this.camera;
 	this.renderer;
 	this.root;
-	this.light;
+	this.inited = false;
+
+	this.linesMesh;
 
     this.init = function () {
     	this.scene = new THREE.Scene();
-		this.camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
+		this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 3000 );
 
-		this.renderer = new THREE.WebGLRenderer( {antialias: true} );
-		this.renderer.setPixelRatio( window.devicePixelRatio );
+		this.renderer = new THREE.WebGLRenderer();
 		this.renderer.setSize( window.innerWidth, window.innerHeight );
-		this.renderer.setClearColor(0xffffff, 1);
 		document.body.appendChild( this.renderer.domElement );
 
 		this.root = new THREE.Group();
@@ -40,82 +22,195 @@ function BackgroundView () {
 		function render () {
 			requestAnimationFrame( render );
 			self.renderer.render( self.scene, self.camera );
-			self.render();
+
+			if(self.inited){
+				self.render();
+			}
 		}
 
-		this.camera.position.z = 500;
-
-		document.addEventListener('mousemove', this.onDocumentMouseMove.bind(this), false );
-
-		window.addEventListener( 'resize', function () {
-
-			self.camera.aspect = window.innerWidth / window.innerHeight;
-			self.camera.updateProjectionMatrix();
-
-			self.renderer.setSize( window.innerWidth, window.innerHeight );
-
-		}, false );
-
-		var ambientLight = new THREE.AmbientLight( 0xffffff );
-		this.scene.add( ambientLight );
-
-		// var light = new THREE.PointLight( 0xffffff, 5, 10000 );
-		// light.position.set( 1000, 100, -2000 );
-		// light.rotation.y = Math.PI;
-
-		this.light = new THREE.PointLight( 0xDF0C37, 1000, 10000 );
-		this.light.position.set( 2000, 0, 500 );
-		this.light.rotation.x = Math.PI;
-
-
-		this.scene.add( this.light );
-
-		this.setup();
+		this.camera.position.z = 100;
 		render();
-    };
 
-    this.setup = function () {
-    	var delay = 1;
-    	var color = 0xff0000;
-
-    	var container = new THREE.Group();
-
-    	for ( var i = 0; i < 10; i++ ) {
-    		bar = new BarGeometry();
-    		bar.position.x = i * 130;
-    		bar.position.y = -500;
-
-    		TweenMax.to( bar.position, 10 + Math.random(), { y: 100 + (Math.random() * 100), delay: delay, ease: Cubic.easeOut } );
-    		container.add( bar );
-    		bar.position.z = -(i * 50);
-    	}
-    	container.position.x = -( (10 * 130) / 2 );
-
-    	for ( var i = 0; i < 15; i++ ) {
-    		bar = new BarGeometry();
-    		bar.position.x = i * 130;
-    		bar.position.y = -1000;
-    		container.add( bar );
-    		bar.position.z = -(i * 50);
-    	}
-
-    	this.root.add( container );
+		document.addEventListener( 'mousemove', this.onDocumentMouseMove.bind(this), false );
     };
 
   	this.onDocumentMouseMove = function (event) {
 	    var windowHalfX = window.innerWidth / 2;
 	    var windowHalfY = window.innerHeight / 2;
-	    this.mouseX = ( event.clientX - windowHalfX );
-	    this.mouseY = ( event.clientY - windowHalfY );
-
-	    TweenMax.to( this.root.rotation, .6, { y: this.mouseX / 10000, x: this.mouseY / 10000 } )
+	    this.mouseX = ( event.clientX - windowHalfX ) * 10;
+	    this.mouseY = ( event.clientY - windowHalfY ) * 10;
 	};
 
-    this.render = function () {
-		var time = Date.now() * 0.0005;
-
-		this.light.position.x = Math.sin( time * 0.7 ) * 30;
-		this.light.position.y = Math.cos( time * 0.5 ) * 40;
-		this.light.position.z = Math.cos( time * 0.3 ) * 30;
+    this.createTest = function () {
+    	var geometry = new THREE.BoxGeometry( 100, 100, 100 );
+		var material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
+		var cube = new THREE.Mesh( geometry, material );
+		this.root.add( cube );
     };
+
+    this.render = function () {
+		  var vertexpos = 0;
+		  var colorpos = 0;
+		  var numConnected = 0;
+
+		  for ( var i = 0; i < this.particleCount; i++ ){
+		    this.particlesData[ i ].numConnections = 0;
+
+		    for ( var i = 0; i < this.particleCount; i++ ) {
+		      var particleData = this.particlesData[i];
+
+		      this.particlePositions[ i * 3     ] += particleData.velocity.x;
+		      this.particlePositions[ i * 3 + 1 ] += particleData.velocity.y;
+		      this.particlePositions[ i * 3 + 2 ] += particleData.velocity.z;
+
+		      if ( this.particlePositions[ i * 3 + 1 ] < -this.rHalf || this.particlePositions[ i * 3 + 1 ] > this.rHalf )
+		        particleData.velocity.y = -particleData.velocity.y;
+
+		      if ( this.particlePositions[ i * 3 ] < -this.rHalf || this.particlePositions[ i * 3 ] > this.rHalf )
+		        particleData.velocity.x = -particleData.velocity.x;
+
+		      if ( this.particlePositions[ i * 3 + 2 ] < -this.rHalf || this.particlePositions[ i * 3 + 2 ] > this.rHalf )
+		        particleData.velocity.z = -particleData.velocity.z;
+
+		      if ( this.effectController.limitConnections && particleData.numConnections >= this.effectController.maxConnections )
+		        continue;
+
+		      for ( var j = i + 1; j < this.particleCount; j++ ) {
+		        
+		        var particleDataB = this.particlesData[ j ];
+		        if ( this.effectController.limitConnections && particleDataB.numConnections >= this.effectController.maxConnections )
+		          continue;
+
+		        var dx = this.particlePositions[ i * 3     ] - this.particlePositions[ j * 3     ];
+		        var dy = this.particlePositions[ i * 3 + 1 ] - this.particlePositions[ j * 3 + 1 ];
+		        var dz = this.particlePositions[ i * 3 + 2 ] - this.particlePositions[ j * 3 + 2 ];
+		        var dist = Math.sqrt( dx * dx + dy * dy + dz * dz );
+
+		        if ( dist < this.effectController.minDistance ) {
+		          
+		          particleData.numConnections++;
+		          particleDataB.numConnections++;
+
+		          var alpha = 1.0 - dist / this.effectController.minDistance;
+		          
+		          this.positions[ vertexpos++ ] = this.particlePositions[ i * 3     ];
+		          this.positions[ vertexpos++ ] = this.particlePositions[ i * 3 + 1 ];
+		          this.positions[ vertexpos++ ] = this.particlePositions[ i * 3 + 2 ];
+
+		          this.positions[ vertexpos++ ] = this.particlePositions[ j * 3     ];
+		          this.positions[ vertexpos++ ] = this.particlePositions[ j * 3 + 1 ];
+		          this.positions[ vertexpos++ ] = this.particlePositions[ j * 3 + 2 ];
+
+		          this.colors[ colorpos++ ] = alpha;
+		          this.colors[ colorpos++ ] = alpha;
+		          this.colors[ colorpos++ ] = alpha;
+
+		          this.colors[ colorpos++ ] = alpha;
+		          this.colors[ colorpos++ ] = alpha;
+		          this.colors[ colorpos++ ] = alpha;
+
+		          numConnected++;
+		        }
+		        
+		      }
+		    }
+		  }
+
+		  this.linesMesh.geometry.groups[ 0 ].count = numConnected * 2;
+		  this.linesMesh.geometry.attributes.position.needsUpdate = true;
+		  this.linesMesh.geometry.attributes.color.needsUpdate = true;
+
+		  this.pointCloud.geometry.attributes.position.needsUpdate = true;
+
+		  this.root.rotation.x += 0.001;
+		  this.root.rotation.y += 0.002;
+    };
+
+    this.createParticles = function () {
+    	this.particlesData = [];
+		this.maxParticleCount = 500;
+		this.particleCount = 500;
+		this.r = 3000;
+		this.rHalf = this.r / 2;
+		this.positions;
+		this.colors;
+
+		this.effectController = {
+			showDots: true,
+			showLines: true,
+			minDistance: 200,
+			limitConnections: false,
+			maxConnections: 10,
+			particleCount: 100
+		}
+
+		this.segments = this.maxParticleCount * this.maxParticleCount;
+
+		this.positions = new Float32Array( this.segments * 3 );
+		this.colors = new Float32Array( this.segments * 3 );
+
+		this.pMaterial = new THREE.PointsMaterial( {
+			color: 0xffffff,
+			size: 1,
+			transparent: true,
+			sizeAttenuation: false
+		} );
+
+		this.particles = new THREE.BufferGeometry();
+		this.particlePositions = new Float32Array( this.maxParticleCount * 3 );
+
+		for ( var i = 0; i < this.maxParticleCount; i++ ) {
+
+		var x = Math.random() * this.r - this.r / 2;
+		var y = Math.random() * this.r - this.r / 2;
+		var z = Math.random() * this.r - this.r / 2;
+
+		this.particlePositions[ i * 3     ] = x;
+		this.particlePositions[ i * 3 + 1 ] = y;
+		this.particlePositions[ i * 3 + 2 ] = z;
+
+		this.particlesData.push( {
+		  velocity: new THREE.Vector3( -1 + Math.random() * 2, -1 + Math.random() * 2,  -1 + Math.random() * 2 ),
+		  numConnections: 0
+		} );
+
+		}
+
+		this.particles.groups.push( {
+		start: 0,
+		count: this.particleCount,
+		index: 0
+		} );
+
+		this.particles.addAttribute( 'position', new THREE.BufferAttribute( this.particlePositions, 3 ) );
+
+		// create the particle system
+		this.pointCloud = new THREE.Points( this.particles, this.pMaterial );
+		this.root.add( this.pointCloud );
+
+		this.geometry = new THREE.BufferGeometry();
+
+		this.geometry.addAttribute( 'position', new THREE.BufferAttribute( this.positions, 3 ) );
+		this.geometry.addAttribute( 'color', new THREE.BufferAttribute( this.colors, 3 ) );
+
+
+		this.geometry.computeBoundingSphere();
+
+		this.geometry.groups.push( {
+			start: 0,
+			count: 0,
+			index: 0
+		} );
+
+		this.material = new THREE.LineBasicMaterial( {
+			transparent: true,
+			color: 0xffffff
+		} );
+		this.material.opacity = 0.2;
+
+		this.linesMesh = new THREE.Line( this.geometry, this.material, THREE.LineSegments );
+		this.root.add( this.linesMesh );
+
+		this.inited = true;
+    }
 }
