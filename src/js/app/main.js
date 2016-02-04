@@ -37,6 +37,47 @@ function job_CLICK ( event ) {
 	
 }
 
+var menu;
+
+function MenuItem ( target ) {
+	this.target 	= target;
+	this.bar 		= target.children[0];
+	this.text 		= target.children[1];
+
+	this.over = function ( event ) {
+		TweenMax.to( this.text, .6, { x: 0, ease: Cubic.easeOut } );
+		TweenMax.to( this.bar, .6, { x: -10, ease: Cubic.easeOut } );
+	}
+
+	this.out = function ( event ) {
+		TweenMax.to( this.text, .6, { x: 0, ease: Cubic.easeOut } );
+		TweenMax.to( this.bar, .6, { x: 0, ease: Cubic.easeOut } );
+	}
+
+	this.click = function ( event ) {
+		// TweenMax.to( this.text, .6, { css: { x: 0, scale: 0 }, ease: Cubic.easeOut } );
+	}
+
+	this.init = function () {
+		$(this.text).bind(MOUSE_EVENT.OVER, this.over.bind(this) );
+		$(this.text).bind(MOUSE_EVENT.OUT, this.out.bind(this) );
+		$(this.text).bind(MOUSE_EVENT.CLICK, this.click.bind(this) );
+	}
+	return this;
+}
+
+function menu_OVER ( event ) {
+	console.log('over');
+}
+
+function menu_OUT ( event ) {
+	console.log('out');
+}
+
+function menu_CLICK ( event ) {
+	console.log('menu click');
+}
+
 function init (){
 	var axisScrollX = {min: 0, max: 0};
 	var axisScrollY = {min: 0, max: 100};
@@ -44,8 +85,21 @@ function init (){
 	timeline = new TimelineMax();
 	timeline.pause();
 
-	background = new BackgroundView();
-	background.init();
+	menu = $('section.welcome ul li');
+
+	for ( var i = 0; i < menu.length; i++ ) {
+		var item = menu[i];
+		// var link = item.children[1];
+		// $(link).bind(MOUSE_EVENT.OVER, menu_OVER);
+		// $(link).bind(MOUSE_EVENT.OUT, menu_OUT);
+		// $(link).bind(MOUSE_EVENT.CLICK, menu_CLICK);
+
+		new MenuItem( menu[i] ).init();
+	}
+
+	// background = new BackgroundView();
+	// background.init();
+	/*
 
 	new DisplayObject('app', $('.app'));
 	new DisplayObject('section_welcome', $('section.welcome'));
@@ -76,7 +130,7 @@ function init (){
 			timeline.add( TweenMax.to( line.container, 1, { css: {width: 9}, ease: Cubic.easeIn } ), i + 0.6 );
 		}
 	}
-
+	*/
 	/*
 	for ( var i = 1; i <= DisplayList.section_jobs_thumbs.container.length; i++ ) {
 		var thumb = new DisplayObject('thumb_' + i, $('section.jobs div:nth-child('+i+')'), DisplayList.section_welcome);

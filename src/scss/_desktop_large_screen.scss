@@ -1,7 +1,3 @@
-canvas {
-	z-index: 0;
-}
-
 .app {
 	position: absolute;
 	top: 0px;
@@ -9,6 +5,9 @@ canvas {
 	width: 100%;
 	height: 100%;
 	z-index: 1;
+	background-color: #fff;
+	perspective: 1000px;
+	perspective-origin: left center;
 
 	section {
 		position: absolute;
@@ -20,69 +19,69 @@ canvas {
 
 	section.welcome {	
 
-		p {
+		.content {
 			position: absolute;
-			left: 5%;
 			top: 50%;
-			margin-top: -50px;
-			width: auto;
-			height: auto;
-			letter-spacing: -11px;
+			width: 100%;
+			transform: translate3d(0, -50%, 0);
 
-			font-family: "Gotham Bold";
-			font-size: 100px;
-			color: #fff;
-			line-height: 100px;
-
-			text-rendering: optimizeLegibility;
-
-			span {
-				float: left;
-				width: 100%;
+			h1 {
+				position: relative;
+				font-family: "Gotham Bold";
+				font-size: 100px;
+				line-height: 80px;
+				letter-spacing: -6px;
 				height: auto;
-				display: block;
-				text-shadow: 2px 2px #000000;
+				width: 100%;
+				width: 100%;
+				color: #222;
+				margin: 0;
+				padding: 0;
+				padding-left: 20px;
 
-				&.text-highlight{
-					width: 100%;
-					float: left;
-					font-size: 15px;
-					line-height: 9px;
-					letter-spacing: 0px;
-					margin-left: 5px;
-					font-family: "Gotham Medium";
-					color: #666666;
-					margin-top: 10px;
-					text-shadow: none;
+				span {
+					height: auto;
+					display: block;
+				}
 
-					a {
-						text-decoration: none;
-						color: #ffffff;
+			}
+
+			ul {
+				position: relative;
+				font-family: "Didot";
+				font-size: 30px;
+				list-style: none;
+				padding-left: 5px;
+				margin-top: 20px;
+
+				li {
+					position: relative;
+					height: 30px;
+
+					div {
+						position: absolute;
+						top: 0px;
+						left: 25px;
+						height: 100%;
+						width: 300px;
+						background-color: #222;
+					}
+
+					span {
+						position: absolute;
+						color: #fff;
+						padding: 5px;
+						padding-left: 25px;
+						margin-bottom: 5px;
+						line-height: 10px;
+						cursor: pointer;
+						z-index: 1;
+					}
+
+					.highlight {
+						color: #000;
 					}
 				}
-
-				&.horizontal-line {
-					margin-top: 50px;
-					width: 50px;
-					border-bottom: 1px solid #333333;
-					opacity: 1;
-					line-height: 100px;
-					margin-left: 5px;
-				}
-			}
-		}
-	}
-
-	section.jobs, section.contact {
-		display: none;
-		div {
-			position: absolute;
-			top: 50%;
-			left: 0px;
-
-			img {
-				width: 110%;
-				transform: translateY(-50%);
 			}
 		}
 	}

@@ -30,3 +30,29 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Gotham Medium';
+  src:  url('../assets/fonts/Gotham-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Gotham-Medium.otf') format('opentype'),
+        url('../assets/fonts/Gotham-Medium.woff') format('woff'),
+        url('../assets/fonts/Gotham-Medium.ttf') format('truetype'),
+        url('../assets/fonts/Gotham-Medium.svg#Gotham-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Didot';
+  src: url('../assets/fonts/Didot.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Didot';
+  src:  url(data:application/x-font-woff;charset=utf-8;base64,) format('woff'), url('../assets/fonts/Didot.ttf')  format('truetype'), url('../assets/fonts/Didot.svg#Didot') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

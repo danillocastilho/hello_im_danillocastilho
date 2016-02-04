@@ -51,132 +51,28 @@
 </head>
 <body>  
 	<div class="app">
-    <section class="jobs">
-      <div>
-        <img src="assets/images/website/thumbs/nissan_kicks.png" /> 
-      </div>
-      <div>
-        <img src="assets/images/website/thumbs/metting_murilo.png" /> 
-      </div>
-      <div>
-        <img src="assets/images/website/thumbs/custom_made_history.png" /> 
-      </div>
-      <div>
-        <img src="assets/images/website/thumbs/nissan_new_versa.png" /> 
-      </div>
-      <div>
-        <img src="assets/images/website/thumbs/kiss_shit_project.png" /> 
-      </div>
-      <div>
-        <img src="assets/images/website/thumbs/tsi_tech.png" /> 
-      </div>
-      <div>
-        <img src="assets/images/website/thumbs/clck.png" /> 
-      </div>
-    </section>
     <section class="welcome">
-      <p>
-        <span>hello,</span>
-        <span class="text-highlight">scroll down to start</span>
-        <span class="horizontal-line"></span>
-      </p>
-      <p>
-        <span>my name is</span>
-      </p>
-      <p>
-        <span>danillo castilho</span>
-      </p>
-      <p>
-        <span>i'm a</span>
-      </p>
-      <p>
-        <span>creativy developer</span>
-      </p>
-      <p>
-        <span>living in brazil</span>
-      </p>
-      <p>
-        <span>already work</span>
-      </p>
-      <p>
-        <span>at agencies like</span>
-      </p>
-      <p>
-        <span>ddb brazil and isobar</span>
-      </p>
-      <p>
-        <span>now at a digital</span>
-      </p>
-      <p>
-        <span>production company</span>
-      </p>
-      <p>
-        <span>really love to coding</span>
-      </p>
-      <p>
-        <span>html, css, sass, less</span>
-      </p>
-      <p>
-        <span>javascript, nodejs</span>
-      </p>
-      <p>
-        <span>hate webgl</span>
-      </p>
-      <p>
-        <span>joking!</span>
-      </p>
-      <p>
-        <span>love webgl,</span>
-      </p>
-      <p>
-        <span>php, mysql, swift, java</span>
-      </p>
-      <p>
-        <span>see some projects</span>
-      </p>
-      <p>
-        <span>nissan kicks</span>
-        <span class="text-highlight">lewlara/tbwa - 2016</span>
-      </p>
-      <p>
-        <span>metting murilo</span>
-        <span class="text-highlight">agency mood - 2015</span>
-      </p>
-      <p>
-        <span>vw trucks. custom-made</span>
-        <span class="text-highlight">almap bbdo - 2015</span>
-      </p>
-      <p>
-        <span>nissan new versa</span>
-        <span class="text-highlight">lewlara/tbwa - 2015</span>
-      </p>
-      <p>
-        <span>kiss shit project</span>
-        <span class="text-highlight">almap bbdo - 2015</span>
-      </p>
-      <p>
-        <span>up tsi</span>
-        <span class="text-highlight">almap bbdo - 2015</span>
-      </p>
-      <p>
-        <span>clck</span>
-        <span class="text-highlight">personal project - 2015</span>
-      </p>
-      <p>
-        <span>with you want</span>
-      </p>
-      <p>
-        <span>to contact me</span>
-      </p>
-      <p>
-        <span>text me to say</span>
-      </p>
-      <p>
-        <span>hello.</span>
-        <span class="text-highlight"><a href="#">linkedin</a> / <a href="#">facebook</a> / <a href="#">github</a></span>
-        <span class="text-highlight"><a href="#">danillocastilhocavalcante@gmail.com</a></span>
-        <span class="text-highlight"><a href="#">+55 11 96403 6239</a></span>
-      </p>
+      <div class="content">
+        <h1>
+          <span>hello,</span>
+          <span>my name is</span>
+          <span>danillo castilho</span>
+        </h1>
+        <ul>
+          <li>
+            <div></div>
+            <span>about</span>
+          </li>
+          <li>
+            <div></div>
+            <span>projects</span>
+          </li>
+          <li>
+            <div></div>
+            <span>contact</span>
+          </li>
+        </ul>
+      </div>
     </section>
   </div>
 </body>
