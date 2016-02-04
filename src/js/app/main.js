@@ -2,6 +2,7 @@ var scrollWhell;
 var scrollGesture;
 var timeline;
 var background;
+var clicked = false;
 
 var MOUSE_EVENT = {
 	CLICK: (Modernizr.touchevents) ? 'touchend' : 'click',
@@ -24,29 +25,25 @@ function setTimelineProgress ( currentTime ) {
 	timeline.progress(currentTime);
 }
 
-var state = 'home';
+function button_CLICK ( event ) {
+	if(!clicked){
+		
+		TweenMax.to(DisplayList.section_subtitle.container, .4, { opacity: 0, ease: Cubic.easeOut });
+		TweenMax.to(DisplayList.section_jobs.container, 1, { scale: 0.9, ease: Cubic.easeInOut, delay: .2 });
+		TweenMax.to(DisplayList.section_jobs.container, 1, { y: '-20%', ease: Cubic.easeInOut, delay: 1 });
+		TweenMax.to(DisplayList.section_welcome.container, 1, { y: '-10%', ease: Cubic.easeInOut, delay: 1 });
+		
 
-function openJob () {
-	TweenMax.to(DisplayList.section_welcome.container, 1, {css: {y: '-40%', x: -50}, ease: Strong.easeOut });
-	TweenMax.to(DisplayList.section_jobs.container, 1, {css: {y: '-30%', x: 100}, ease: Strong.easeOut });
-}
-
-function closeJob () {
-	TweenMax.to(DisplayList.section_welcome.container, 1, {css: {y: '0%', x: 0}, ease: Strong.easeOut });
-	TweenMax.to(DisplayList.section_jobs.container, 1, {css: {y: '0%', x: 0}, ease: Strong.easeOut });
-}
-
-function job_CLICK ( event ) {
-	if( state == 'home' ){
-		state = 'job';
-		openJob();
+		clicked = true;
 	} else {
-		state = 'home';
-		closeJob();
-	}
-	
-}
+		TweenMax.to(DisplayList.section_jobs.container, 1, { y: '0%', ease: Cubic.easeInOut, delay: 0 });
+		TweenMax.to(DisplayList.section_welcome.container, 1, { y: '0%', ease: Cubic.easeInOut, delay: 0 });
+		TweenMax.to(DisplayList.section_jobs.container, 1, { scale: 1, ease: Cubic.easeInOut, delay: 1 });
+		TweenMax.to(DisplayList.section_subtitle.container, .4, { opacity: 1, ease: Cubic.easeOut, delay: 1.8 });
 
+		clicked = false;
+	}
+}
 
 function init (){
 	var axisScrollX = {min: 0, max: 0};
@@ -69,11 +66,18 @@ function init (){
 	new DisplayObject('section_contact', $('section.contact'));
 	new DisplayObject('section_contact_thumbs', $('section.jobs div'));
 
+	new DisplayObject('section_subtitle', $('section.subtitle'));
+	new DisplayObject('subtitle_1', $('section.subtitle p:nth-child(1)'), DisplayList.section_subtitle);
+	new DisplayObject('subtitle_2', $('section.subtitle p:nth-child(2)'), DisplayList.section_subtitle);
+
 	new DisplayObject('background', $('canvas'));
 
-	timeline.add( TweenMax.to( DisplayList.background.container, 15, { css: {opacity: 0.4}, ease: Cubic.easeIn } ), 0 );
-	timeline.add( TweenMax.to( DisplayList.background.container, 3, { css: {opacity: 0.2}, ease: Cubic.easeIn } ), 18 );
-	timeline.add( TweenMax.to( DisplayList.background.container, 3, { css: {opacity: 0.4}, ease: Cubic.easeIn } ), 25 );
+	timeline.add( TweenMax.to( DisplayList.background.container, 15, { css: {opacity: 0.5}, ease: Cubic.easeIn } ), 0 );
+	timeline.add( TweenMax.to( DisplayList.background.container, 3, { css: {opacity: 0.1}, ease: Cubic.easeIn } ), 18 );
+
+	timeline.add( TweenMax.to( DisplayList.section_subtitle.subtitle_1.container, 1, {opacity: 0, x: -20, ease: Cubic.easeInOut} ), 2 );
+	timeline.add( TweenMax.fromTo( DisplayList.section_subtitle.subtitle_2.container, 1, {opacity: 0, x: 20}, {opacity: 1, x: 0, ease: Cubic.easeInOut} ), 20 );
+	timeline.add( TweenMax.to( DisplayList.section_subtitle.subtitle_2.container, 1, {opacity: 0, x: -20, ease: Cubic.easeInOut} ), 27 );
 
 	for ( var i = 1; i <= DisplayList.section_welcome_paragraphs.container.length; i++ ) {
 		var text = new DisplayObject('text_' + i, $('section.welcome p:nth-child('+i+')'), DisplayList.section_welcome);
@@ -96,18 +100,12 @@ function init (){
 		timeline.add( TweenMax.to( thumb.container, 1, { css: {x: -10, scale: 1, opacity: 0.02}, ease: Cubic.easeInOut } ), (i + 1) + 19 );
 	}
 
-	$(DisplayList.app.container).bind(MOUSE_EVENT.CLICK, job_CLICK);
-
-	// for ( var i = 1; i <= DisplayList.section_contact_thumbs.container.length; i++ ) {
-	// 	var thumb = new DisplayObject('thumb_' + i, $('section.contact div:nth-child('+i+')'), DisplayList.section_welcome);
-	// 	timeline.add( TweenMax.fromTo( thumb.container, 1, { css: { x: 10, opacity: 0}}, { css: {x: 0, opacity: 1}, ease: Cubic.easeInOut } ), (i) + 28 );
-	// 	timeline.add( TweenMax.to( thumb.container, 1, { css: {x: -10, scale: 1, opacity: 0.02}, ease: Cubic.easeInOut } ), (i + 1) + 28 );
-	// }
-
-	// timeline.progress(0.74);
-
 	scrollWhell = new ScrollWhell( axisScrollX, axisScrollY, scrollWhell_callback );
 	scrollGesture = new ScrollGesture( axisScrollX, axisScrollY, scrollGesture_callback );
+
+	$(window).bind(MOUSE_EVENT.CLICK, button_CLICK);
+
+	timeline.progress(0.74);
 }
 
 $(document).ready( function(){

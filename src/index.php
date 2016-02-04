@@ -53,31 +53,30 @@
 	<div class="app">
     <section class="jobs">
       <div>
-        <img src="assets/images/website/thumbs/nissan_kicks.png" /> 
+        <!-- <img src="assets/images/website/thumbs/nissan_kicks.png" />  -->
       </div>
       <div>
-        <img src="assets/images/website/thumbs/metting_murilo.png" /> 
+        <!-- <img src="assets/images/website/thumbs/metting_murilo.png" />  -->
       </div>
       <div>
-        <img src="assets/images/website/thumbs/custom_made_history.png" /> 
+        <!-- <img src="assets/images/website/thumbs/custom_made_history.png" />  -->
       </div>
       <div>
-        <img src="assets/images/website/thumbs/nissan_new_versa.png" /> 
+        <!-- <img src="assets/images/website/thumbs/nissan_new_versa.png" />  -->
       </div>
       <div>
-        <img src="assets/images/website/thumbs/kiss_shit_project.png" /> 
+        <!-- <img src="assets/images/website/thumbs/kiss_shit_project.png" />  -->
       </div>
       <div>
-        <img src="assets/images/website/thumbs/tsi_tech.png" /> 
+        <!-- <img src="assets/images/website/thumbs/tsi_tech.png" />  -->
       </div>
       <div>
-        <img src="assets/images/website/thumbs/clck.png" /> 
+        <!-- <img src="assets/images/website/thumbs/clck.png" />  -->
       </div>
     </section>
     <section class="welcome">
       <p>
         <span>hello,</span>
-        <span class="text-highlight">scroll down to start</span>
         <span class="horizontal-line"></span>
       </p>
       <p>
@@ -136,27 +135,27 @@
       </p>
       <p>
         <span>nissan kicks</span>
-        <span class="text-highlight">lewlara/tbwa - 2016</span>
+        <span class="text-highlight">nissan - lewlara/tbwa - 2016</span>
       </p>
       <p>
         <span>metting murilo</span>
-        <span class="text-highlight">agency mood - 2015</span>
+        <span class="text-highlight">huggies - agency mood - 2015</span>
       </p>
       <p>
-        <span>vw trucks. custom-made</span>
-        <span class="text-highlight">almap bbdo - 2015</span>
+        <span>custom-made</span>
+        <span class="text-highlight">volkswagen trucks - almap bbdo - 2015</span>
       </p>
       <p>
-        <span>nissan new versa</span>
-        <span class="text-highlight">lewlara/tbwa - 2015</span>
+        <span>new versa</span>
+        <span class="text-highlight">nissan - lewlara/tbwa - 2015</span>
       </p>
       <p>
-        <span>kiss shit project</span>
-        <span class="text-highlight">almap bbdo - 2015</span>
+        <span>shit project</span>
+        <span class="text-highlight">kiss fm - almap bbdo - 2015</span>
       </p>
       <p>
         <span>up tsi</span>
-        <span class="text-highlight">almap bbdo - 2015</span>
+        <span class="text-highlight">volkswagen - almap bbdo - 2015</span>
       </p>
       <p>
         <span>clck</span>
@@ -176,6 +175,14 @@
         <span class="text-highlight"><a href="#">linkedin</a> / <a href="#">facebook</a> / <a href="#">github</a></span>
         <span class="text-highlight"><a href="#">danillocastilhocavalcante@gmail.com</a></span>
         <span class="text-highlight"><a href="#">+55 11 96403 6239</a></span>
+      </p>
+    </section>
+    <section class="subtitle">
+      <p>
+        <span>scroll down to start</span>
+      </p>
+       <p>
+        <span>click to see more about</span>
       </p>
     </section>
   </div>
