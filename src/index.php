@@ -74,6 +74,10 @@
         <!-- <img src="assets/images/website/thumbs/clck.png" />  -->
       </div>
     </section>
+    <section class="job">
+      <div class="background">
+      </div>
+    </section>
     <section class="welcome">
       <p>
         <span>hello,</span>
@@ -168,7 +172,7 @@
         <span>to contact me</span>
       </p>
       <p>
-        <span>text me to say</span>
+        <span>text to say</span>
       </p>
       <p>
         <span>hello.</span>
