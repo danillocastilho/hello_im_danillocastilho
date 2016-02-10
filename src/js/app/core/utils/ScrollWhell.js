@@ -50,6 +50,7 @@ function ScrollWhell ( xMinAndMaxScroll, yMinAndMaxScroll, callback ) {
       if(!this.enable){
         return;
       }
+
       var oEvent = e.originalEvent,
           delta  = oEvent.deltaY || oEvent.wheelDelta;
 

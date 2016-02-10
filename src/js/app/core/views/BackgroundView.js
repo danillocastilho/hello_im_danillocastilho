@@ -150,7 +150,7 @@ function BackgroundView () {
 		this.colors = new Float32Array( this.segments * 3 );
 
 		this.pMaterial = new THREE.PointsMaterial( {
-			color: 0xffffff,
+			color: 0xF92A6C,
 			size: 1,
 			transparent: true,
 			sizeAttenuation: false
@@ -204,7 +204,7 @@ function BackgroundView () {
 
 		this.material = new THREE.LineBasicMaterial( {
 			transparent: true,
-			color: 0xffffff
+			color: 0xF92A6C
 		} );
 		this.material.opacity = 0.2;
 

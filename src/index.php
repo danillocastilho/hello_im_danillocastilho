@@ -77,6 +77,66 @@
     <section class="job">
       <div class="background">
       </div>
+      <div class="content">
+        <ul>
+          <li>
+            <div class="thumb">
+
+            </div>
+            <div class="text">
+              <p>
+                Reinforcing the concept of "Tailor Made" brand, Volkswagen is presenting a commercial that lasts exactly as long as the viewer wants.
+              </p>
+            </div>
+            <div class="overlay">
+              
+            </div>
+          </li>
+          <li>
+            <div class="thumb">
+
+            </div>
+            <div class="text">
+              <p>
+                the film works as follows: towards a Volkswagen 13,180, a truck driver tells a story to his traveling companion.
+              </p>
+            </div>
+            <div class="overlay">
+              
+            </div>
+          </li>
+          <li>
+            <div class="thumb">
+
+            </div>
+            <div class="text">
+              <p>
+                At one point, it appears on the right bottom of the video a button that must be clicked when the viewer wants to quit the business.
+              </p>
+            </div>
+            <div class="overlay">
+              
+            </div>
+          </li>
+          <li>
+            <div class="thumb">
+
+            </div>
+            <div class="text">
+              <p>
+                When pressed, the movie jumps to the end and keeps the sense regardless of the time display.
+              </p>
+            </div>
+            <div class="overlay">
+              
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="bar left">
+      </div>
+      <div class="bar right">
+      </div>
     </section>
     <section class="welcome">
       <p>
