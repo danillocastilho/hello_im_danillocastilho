@@ -1,0 +1,25 @@
+{
+	"folders":
+	[
+		{
+			"path": "./",
+			"name": "Danillo Castilho",
+			"file_exclude_patterns": [
+				"*.sublime-workspace",
+				"*.sass-cache",
+				"*.map"
+			],
+			"folder_exclude_patterns": [
+				"node_modules",
+				"build",
+				"bower_components"
+			]
+		}
+	],
+	"settings":
+	{
+		"tab_size": 2,
+		"margin": 2,
+		"translate_tabs_to_spaces": false
+	}
+}
