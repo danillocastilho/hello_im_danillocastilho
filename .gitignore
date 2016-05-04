@@ -24,3 +24,4 @@ config/database.php
 deploy/
 site/
 dev/
+.DS_Store
