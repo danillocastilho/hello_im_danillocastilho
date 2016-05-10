@@ -1,28 +1,28 @@
 {
-	"folders":
-	[
-		{
-			"path": "./",
-			"name": "Danillo Castilho",
-			"file_exclude_patterns": [
-				"*.sublime-workspace",
-				"*.sublime-project",
-				"*.sass-cache",
-				"*.map",
-				".gitignore",
-			],
-			"folder_exclude_patterns": [
-				"node_modules",
-				"build",
-				"bower_components",
-				"deploy"
-			]
-		}
-	],
-	"settings":
-	{
-		"tab_size": 2,
-		"margin": 2,
-		"translate_tabs_to_spaces": false
-	}
+        "folders":
+        [
+                {
+                        "path": "./",
+                        "name": "danillocastilho",
+                        "file_exclude_patterns": [
+                                "*.sublime-workspace",
+                                "*.sublime-project",
+                                "*.sass-cache",
+                                "*.map",
+                                ".gitignore",
+                        ],
+                        "folder_exclude_patterns": [
+                                "node_modules",
+                                "build",
+                                "bower_components",
+                                "deploy",
+                        ]
+                }
+        ],
+        "settings":
+        {
+                "tab_size": 4,
+                "margin": 4,
+                "translate_tabs_to_spaces": false
+        }
 }

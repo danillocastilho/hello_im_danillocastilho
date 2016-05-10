@@ -1,23 +1,82 @@
 .app {
 
-	section.welcome {
-		p {
-			margin-top: -15px;
-			letter-spacing: -2px;
-			font-size: 50px;
-			line-height: 30px;
+	section {
 
-			span {
-				&.text-highlight{
-					font-size: 10px;
-					line-height: 15px;
-					margin-left: 5px;
+		.container {
+
+			.text-view {
+
+				p {
+					position: absolute;
+					top: 50%;
+					width: calc(100% - 80px);
+					line-height: 40px;
+
+					font-size: 40px;
+					letter-spacing: -3px;
+					text-align: center;
+
+					span {
+						display: inline;
+
+						&.title {
+							font-size: 20px;
+							line-height: 20px;
+							letter-spacing: -2px;
+							display: block;
+						}
+					}
+
+					&.small {
+						width: 80%;
+						font-size: 20px;
+						letter-spacing: -1px;
+						line-height: 20px;
+					}
+
+					&.big {
+						font-size: 60px;
+						span {
+							line-height: 20px;	
+						}
+					}
+
+					&.medium {
+						width: 90%;
+						font-size: 20px;
+						line-height: 20px;
+						letter-spacing: -2px;
+
+						span {
+							&.title {
+								opacity: 1;
+								font-size: 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	section.navigation {
+
+		.border {
+			top: 20px;
+			left: 20px;
+			width: calc(100% - 40px);
+			height: calc(100% - 40px);
+		}
+	}
+
+	section.work {
+		.container {
+			.text-view {
+
+				.background {
+					opacity: 0.1;
 				}
 
-				&.horizontal-line {
-					margin-top: 20px;
-					margin-left: 0px;
-				}
 			}
 		}
 	}

@@ -1,49 +1,88 @@
 .app {
 
-	section.welcome {
-		p {
-			margin-top: -15px;
-			letter-spacing: -2px;
-			font-size: 40px;
-			line-height: 30px;
+	section {
 
-			span {
-				&.text-highlight{
-					font-size: 10px;
-					line-height: 15px;
-					margin-left: 5px;
-				}
+		.container {
 
-				&.horizontal-line {
-					margin-top: 20px;
-					margin-left: 0px;
+			.text-view {
+
+				p {
+					position: absolute;
+					top: 50%;
+					width: calc(100% - 80px);
+					line-height: 30px;
+
+					font-size: 30px;
+					letter-spacing: -3px;
+					text-align: center;
+
+					span {
+						display: block;
+
+						&.title {
+							font-size: 20px;
+							line-height: 40px;
+							letter-spacing: -1px;
+							display: block;
+						}
+					}
+
+					&.small {
+						width: 80%;
+						font-size: 20px;
+						letter-spacing: -1px;
+						line-height: 20px;
+
+						span {
+							display: inline;
+						}
+					}
+
+					&.big {
+						font-size: 50px;
+
+
+						span {
+							line-height: 40px;
+							letter-spacing: -2px;
+						}
+					}
+
+					&.medium {
+						width: 85%;
+						font-size: 20px;
+						line-height: 20px;
+						letter-spacing: -2px;
+
+						span {
+							&.title {
+								opacity: 1;
+								font-size: 20px;
+							}
+						}
+					}
 				}
 			}
 		}
 	}
 
-	section.jobs {
-		div {
-			&:nth-child(1){
-				background-image: url('../assets/images/website/thumbs/portrait/nissan_kicks/project.jpg');
-			}
-			&:nth-child(2){
-				background-image: url('../assets/images/website/thumbs/portrait/metting_murilo/project.jpg');
-			}
-			&:nth-child(3){
-				background-image: url('../assets/images/website/thumbs/portrait/custom_made_history/project.jpg');
-			}
-			&:nth-child(4){
-				background-image: url('../assets/images/website/thumbs/portrait/nissan_new_versa/project.jpg');
-			}
-			&:nth-child(5){
-				background-image: url('../assets/images/website/thumbs/portrait/kiss_shit_project/project.jpg');
-			}
-			&:nth-child(6){
-				background-image: url('../assets/images/website/thumbs/portrait/tsi_tech/project.jpg');
-			}
-			&:nth-child(7){
-				background-image: url('../assets/images/website/thumbs/portrait/clck/project.jpg');
+	section.navigation {
+
+		.border {
+			top: 20px;
+			left: 20px;
+			width: calc(100% - 40px);
+			height: calc(100% - 40px);
+		}
+	}
+
+	section.work {
+		.container {
+			.text-view {
+
+				.background {
+					opacity: 0.1;
+				}
 			}
 		}
 	}

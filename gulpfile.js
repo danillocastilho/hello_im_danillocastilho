@@ -1,3 +1,4 @@
+var fs              = require('fs')
 var gulp            = require('gulp');
 var sass            = require('gulp-sass');
 var sourcemaps      = require('gulp-sourcemaps');
@@ -13,50 +14,52 @@ var wrap            = require('gulp-wrap')
 var jshint          = require('gulp-jshint');
 var declare         = require('gulp-declare')
 var browserSync     = require('browser-sync');
-var reload          = browserSync.reload;
 var config          = require('./gulp.config.json');
+var browserify      = require('browserify');
+var jstify          = require('jstify')
 
-gulp.task('html', function() {
-  return gulp.src('./src/*.html')
+var PATHS           = [
+                        {src:'./src/*.*', watch:'pages-watch'},
+                        {src:'./src/assets/**/*', watch:'assets-watch'},
+                        {src:'./src/js/application/**/*', watch:'scripts-watch'},
+                        {src:'./src/js/vendors/**/*', watch:'vendors-watch'},
+                        {src:'./src/scss/*.scss', watch:'sass-watch'}
+                      ];
+
+var run = function () {
+  gulp.start(this.watch);
+}
+
+gulp.task('pages', function() {
+  return gulp.src('./src/*.*')
     .pipe(gulp.dest('./deploy/'))
 });
+gulp.task('pages-watch', ['pages'], browserSync.reload);
 
-gulp.task('php', function() {
-  return gulp.src('./src/*.php')
-    .pipe(gulp.dest('./deploy/'))
+gulp.task('assets', function() {
+  return gulp.src('./src/assets/**/*')
+    .pipe(gulp.dest('./deploy/assets/'))
 });
+gulp.task('assets-watch', ['assets'], browserSync.reload);
 
-gulp.task('xml', function() {
-  return gulp.src('./src/*.xml')
-    .pipe(gulp.dest('./deploy/'))
+gulp.task('scripts', function() {
+  // return gulp.src('./src/js/application/**/*')
+  //   .pipe(concat('main.js'))
+  //   .pipe(uglify())
+  //   .pipe(gulp.dest('./deploy/js/'))
+  
+  var b = browserify()
+  b.transform({
+    global: true
+  }, 'uglifyify')
+  
+  return b.add('./src/js/main.js')
+    .transform('jstify')
+    .bundle(function(err, app) {
+      fs.writeFile('./deploy/js/main.js', app);
+    });
 });
-
-gulp.task('txt', function() {
-  return gulp.src('./src/*.txt')
-    .pipe(gulp.dest('./deploy/'))
-});
-
-gulp.task('images', function() {
-  return gulp.src('./src/assets/images/**/*')
-    .pipe(gulp.dest('./deploy/assets/images/'))
-});
-
-gulp.task('fonts', function() {
-  return gulp.src('./src/assets/fonts/**/*')
-    .pipe(gulp.dest('./deploy/assets/fonts/'))
-});
-
-gulp.task('videos', function() {
-  return gulp.src('./src/assets/videos/**/*')
-    .pipe(gulp.dest('./deploy/assets/videos/'))
-});
-
-gulp.task('js', function() {
-  return gulp.src('./src/js/app/**/*')
-    .pipe(concat('main.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./deploy/js/'))
-});
+gulp.task('scripts-watch', ['scripts'], browserSync.reload);
 
 gulp.task('vendors', function() {
   return gulp.src('./src/js/vendors/**/*')
@@ -64,6 +67,7 @@ gulp.task('vendors', function() {
     .pipe(uglify())
     .pipe(gulp.dest('./deploy/js/'))
 });
+gulp.task('vendors-watch', ['vendors'], browserSync.reload);
 
 gulp.task('sass', function() {
   return gulp.src("./src/scss/*.scss")
@@ -76,35 +80,18 @@ gulp.task('sass', function() {
     .pipe(filter('**/*.css'))
     .pipe(browserSync.stream());
 });
-
-gulp.task('cms', function() {
-  return gulp.src('./src/cms/**/*')
-  .pipe(gulp.dest('./deploy/cms'))
-});
-
-gulp.task('cms-reload', ['cms'], function() {
-  setTimeout( function(){
-    browserSync.reload();
-  }, 1000 );
-});
+gulp.task('sass-watch', ['sass']);
 
 gulp.task('watch', function() {
-  gulp.watch( './src/*.html', ['html'])
-  gulp.watch( './src/*.php', ['php'])
-  gulp.watch( './src/*.xml', ['xml'])
-  gulp.watch( './src/*.txt', ['txt'])
-  gulp.watch( './src/js/app/**/*', ['js'])
-  gulp.watch( './src/js/vendors/**/*', ['vendors'])
-  gulp.watch( './src/scss/**/*', ['sass'])
-  gulp.watch( './src/cms/application/**/*', ['cms-reload'])
-
-  gulp.watch("./deploy/*.html").on('change', reload);
-  gulp.watch("./deploy/*.php").on('change', reload);
-  gulp.watch("./deploy/js/*.js").on('change', reload);
+  for ( var i = 0; i < PATHS.length; i++ ) {
+    var path = PATHS[i];
+    gulp.watch(path.src).on('change', run.bind(path));
+    gulp.watch(path.src).on('add', run.bind(path));
+    gulp.watch(path.src).on('unlink', run.bind(path));
+  }
 });
 
-gulp.task('serve', ['html', 'php', 'xml', 'txt', 'images', 'fonts', 'videos', 'js', 'vendors', 'sass', 'cms-reload', 'watch'], function (){
-  var reload = browserSync.reload;
+gulp.task('serve', ['pages', 'assets', 'scripts', 'vendors', 'sass', 'watch'], function (){
   browserSync.init({
     proxy: config.proxy
   });
