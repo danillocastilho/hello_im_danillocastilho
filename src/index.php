@@ -14,7 +14,7 @@
 <html lang="pt">
 <head>
 	<meta charset="UTF-8">
-	<title>Hello I'm Danillo Castilho</title>
+	<title>Hi, I'm Danillo Castilho</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="X-UA-Compatible" content="chrome=1" />
@@ -73,7 +73,7 @@
       <div class="container">
         <div class="text-view">
           <p>
-            <span>Hello, </span><span>I'm Danillo Castilho</span>
+            <span>Hi, </span><span>I'm Danillo Castilho</span>
           </p>
           <div class="details">
             <p class="big">
@@ -86,31 +86,31 @@
         </div>
         <div class="text-view">
           <p>
-            a head of technology,
+            Front-end and Creative Developer
           </p>
           <div class="background"></div>
         </div>
         <div class="text-view">
           <p>
-            creative developer
+            <span>living in </span><span>Auckland, New Zealand</span>
           </p>
           <div class="background"></div>
         </div>
         <div class="text-view">
           <p>
-            and freelancer
+            <span>and working </span><span>at Method</span>
           </p>
           <div class="background"></div>
         </div>
         <div class="text-view">
           <p>
-            <span>living in </span><span>São Paulo, Brazil</span>
+            <span>a digital </span><span>agency.</span>
           </p>
           <div class="background"></div>
         </div>
         <div class="text-view">
           <p>
-            <span>with a </span><span>large background</span>
+            <span>With a </span><span>large background</span>
           </p>
           <div class="background"></div>
         </div>
@@ -123,18 +123,6 @@
         <div class="text-view">
           <p>
             advertising industry
-          </p>
-          <div class="background"></div>
-        </div>
-        <div class="text-view">
-          <p>
-            <span>I'm working at </span><span>the goodfellas</span>
-          </p>
-          <div class="background"></div>
-        </div>
-        <div class="text-view">
-          <p>
-            <span>a digital production </span><span>company</span>
           </p>
           <div class="background"></div>
         </div>
@@ -281,7 +269,7 @@
         </div>
         <div class="text-view">
           <p>
-            feel free to contact me
+            feel free to get in touch
           </p>
           <div class="background"></div>
         </div>
@@ -373,10 +361,16 @@
           <div class="work_title">
             <p class="medium">
               <span class="opaque title">
-                visit
+                awards
               </span>
               <span>
-                <a href="https://www.hpmagicwords.com.br/#en" target="_blank">hpmagicwords.com.br</a>
+                2016, Cannes Lions - Gold Lions Cyber
+                <br />
+                2016, Cannes Lions - Bronze Lions Cyber
+                <br />
+                2016, Awwwards - Site of the Day
+                <br />
+                2016, FWA - Site of the Day
               </span>
             </p>
           </div>
@@ -395,7 +389,14 @@
                 
               </span>
               <span>
-                
+                <p class="medium">
+                  <span class="opaque title">
+                    visit
+                  </span>
+                  <span>
+                    <a href="https://www.hpmagicwords.com.br/#en" target="_blank">hpmagicwords.com.br</a>
+                  </span>
+                </p>
               </span>
             </p>
             <div class="details">
@@ -523,7 +524,7 @@
                 awards
               </span>
               <span>
-                dubai lynx - 2016 - mobile - bronze
+                2016, Dubai Lynx - Bronze Mobile
               </span>
             </p>
           </div>
@@ -637,11 +638,11 @@
                 awards
               </span>
               <span>
-                cannes lions - 2015 - health - gold
+                2015, Cannes Lions - Gold Lions Health
                 <br />
-                cannes lions - 2015 - health - silver
+                2015, Cannes Lions - Silver Lions Health
                 <br />
-                cannes lions - 2015 - creative data - bronze
+                2015, Cannes Lions - Bronze Lions Creative Data
               </span>
             </p>
           </div>
@@ -774,9 +775,9 @@
                 awards
               </span>
               <span>
-                cannes lions - 2015 - film craft script - silver
+                2015, Cannes Lions - Silver Film Craft Script
                 <br />
-                colunistas - 2015 - automotive products and services - bronze
+                2015, Colunistas - Bronze Automotive Products and Services
               </span>
             </p>
           </div>
@@ -909,11 +910,11 @@
                 awards
               </span>
               <span>
-                the webby awards - 2015 - interactive advertising - winner
+                2015, The Webby Awards - Interactive Advertising
                 <br />
-                cannes lions - 2014 - innovation - gold
+                2014, Cannes Lions - Gold Lions Innovation
                 <br />
-                cannes lions - 2014 - media - bronze
+                2014, Cannes Lions - Bronze Lions Media
                 <br />
                 10+ international awards
               </span>
