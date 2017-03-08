@@ -92,7 +92,13 @@
         </div>
         <div class="text-view">
           <p>
-            <span>living in </span><span>Auckland, New Zealand</span>
+            <span>Brazilian living in</span>
+          </p>
+          <div class="background"></div>
+        </div>
+        <div class="text-view">
+          <p>
+            <span>New Zealand</span>
           </p>
           <div class="background"></div>
         </div>
@@ -110,37 +116,37 @@
         </div>
         <div class="text-view">
           <p>
-            <span>With a </span><span>large background</span>
+            <span>with a </span><span>large and varied</span>
           </p>
           <div class="background"></div>
         </div>
         <div class="text-view">
           <p>
-            <span>in web </span><span>development for</span>
+            <span>background in </span><span>web development</span>
           </p>
           <div class="background"></div>
         </div>
         <div class="text-view">
           <p>
-            advertising industry
+            I have worked on
           </p>
           <div class="background"></div>
         </div>
         <div class="text-view">
           <p>
-            <span>I worked </span><span>for companies</span>
+            <span>some huge </span><span>brands and projects</span>
           </p>
           <div class="background"></div>
         </div>
         <div class="text-view">
           <p>
-            <span>like </span><span>DDB Brazil and Isobar</span>
+            <span>during many </span><span>years at</span>
           </p>
           <div class="background"></div>
         </div>
         <div class="text-view">
           <p>
-            <span>and brands </span><span>including</span>
+            <span>DDB and Isobar </span><span>in Brazil</span>
           </p>
           <div class="background"></div>
         </div>
@@ -295,6 +301,409 @@
       <div class="container">
 
         <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/write_to_santa/picture_1.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                method - new zealand post
+              </span>
+              <span>
+                write to santa
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/write_to_santa/picture_2.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="medium">
+              <span class="opaque title">
+                my role
+              </span>
+              <span>
+                front-end developer
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/write_to_santa/picture_3.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="medium">
+              <span class="opaque title">
+                technology
+              </span>
+              <span>
+                html5, css3, javascript, and node js
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/write_to_santa/picture_4.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                
+              </span>
+              <span>
+                <p class="medium">
+                  <span class="opaque title">
+                    visit
+                  </span>
+                  <span>
+                    <a href="https://www.youtube.com/watch?v=SJxhN7VZm44" target="_blank">writetosanta.nzpost.co.nz</a>
+                  </span>
+                </p>
+              </span>
+            </p>
+            <div class="details">
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/write_to_santa/picture_5.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                
+              </span>
+              <span>
+                
+              </span>
+            </p>
+            <div class="details">
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                
+              </span>
+              <span>
+                
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <!--
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/rogue_one/picture_1.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                method - panasonic
+              </span>
+              <span>
+                rogue one
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/rogue_one/picture_2.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="medium">
+              <span class="opaque title">
+                my role
+              </span>
+              <span>
+                front-end developer
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/rogue_one/picture_3.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="medium">
+              <span class="opaque title">
+                technology
+              </span>
+              <span>
+                html5, css3, javascript, and node js
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/rogue_one/picture_4.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                
+              </span>
+              <span>
+                <p class="medium">
+                  <span class="opaque title">
+                    visit
+                  </span>
+                  <span>
+                    <a href="http://decodetowin.co.nz/" target="_blank">decodetowin.co.nz</a>
+                  </span>
+                </p>
+              </span>
+            </p>
+            <div class="details">
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/rogue_one/picture_5.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                
+              </span>
+              <span>
+                
+              </span>
+            </p>
+            <div class="details">
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                
+              </span>
+              <span>
+                
+              </span>
+            </p>
+          </div>
+        </div>
+        -->
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/getty_images/picture_1.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                almap bbdo - getty images
+              </span>
+              <span>
+                endless possibilities
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/getty_images/picture_2.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="medium">
+              <span class="opaque title">
+                my role
+              </span>
+              <span>
+                head of technology, creative developer and front-end developer
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/getty_images/picture_3.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="medium">
+              <span class="opaque title">
+                technology
+              </span>
+              <span>
+                html5, css3, javascript, php and node js
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/getty_images/picture_4.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="medium">
+              <span class="opaque title">
+                awards
+              </span>
+              <span>
+                2016, Awwwards - Site of the Day
+                <br />
+                2016, FWA - Site of the Day
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/getty_images/picture_5.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                
+              </span>
+              <span>
+                <p class="medium">
+                  <span class="opaque title">
+                    visit
+                  </span>
+                  <span>
+                    <a href="http://www.gettyendless.com/" target="_blank">gettyendless.com.br</a>
+                  </span>
+                </p>
+              </span>
+            </p>
+            <div class="details">
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/getty_images/picture_6.jpg)">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                
+              </span>
+              <span>
+                
+              </span>
+            </p>
+            <div class="details">
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
+          <div class="thumb">
+            <div class="bar top"></div>
+            <div class="bar bottom"></div>
+
+          </div>
+          <div class="background"></div>
+          <div class="work_title">
+            <p class="big">
+              <span class="opaque title">
+                
+              </span>
+              <span>
+                
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-view no-effect">
           <div class="thumb" style="background-image: url(assets/images/website/thumbs/landscape/magic_words/picture_1.jpg)">
             <div class="bar top"></div>
             <div class="bar bottom"></div>
@@ -400,11 +809,7 @@
               </span>
             </p>
             <div class="details">
-              <!-- <p class="big">
-                <span class="opaque title">
-                  click to see more details
-                </span>
-              </p> -->
+              
             </div>
           </div>
         </div>
@@ -426,11 +831,7 @@
               </span>
             </p>
             <div class="details">
-              <!-- <p class="big">
-                <span class="opaque title">
-                  click to see more details
-                </span>
-              </p> -->
+              
             </div>
           </div>
         </div>
