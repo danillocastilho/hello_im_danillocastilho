@@ -32,13 +32,13 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="shortcut icon" href="<?php echo $WEBSITE_PATH; ?>assets/images/icons/icon.png?v=1.0" type="image/png">
   <link rel="icon" href="<?php echo $WEBSITE_PATH; ?>assets/images/icons/icon.png?v=1.0" type="image/png">
-  <meta name="description" content="Hello, I'm Danillo Castilho a head of technology, creative developer and freelancer living in São Paulo, Brazil.">
-  <meta name="keywords" content="danillo, castilho, danillo castilho, danillo castilho cavalcante, head of technology, front-end developer, developer, creative developer">
+  <meta name="description" content="Hi, I'm Danillo Castilho Hello, a creative developer and freelancer living in Auckland, New Zealand.">
+  <meta name="keywords" content="danillo, castilho, danillo castilho, danillo castilho cavalcante, creative developer, front-end developer, developer, creative developer, new zealand, auckland">
 
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Hello, I'm Danillo Castilho">
-  <meta property="og:description" content="a head of technology, creative developer and freelancer living in São Paulo, Brazil.">
-  <meta property="og:site_name" content="Hello, I'm Danillo Castilho">
+  <meta property="og:title" content="Hi, I'm Danillo Castilho">
+  <meta property="og:description" content="Hello, a creative developer and freelancer living in Auckland, New Zealand.">
+  <meta property="og:site_name" content="Hi, I'm Danillo Castilho">
   <meta property="og:image" content="<?php echo $WEBSITE_PATH; ?>assets/images/share/share.png?v=1.0">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="470">
